@@ -1,0 +1,23 @@
+{
+  "name": "xk-cli-tools",
+  "version": "1.0.0",
+  "description": "cli tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XK-Z0-XD/xk-cli-tools.git"
+  },
+  "keywords": [
+    "cli",
+    "tools"
+  ],
+  "author": "em9836",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XK-Z0-XD/xk-cli-tools/issues"
+  },
+  "homepage": "https://github.com/XK-Z0-XD/xk-cli-tools#readme"
+}
