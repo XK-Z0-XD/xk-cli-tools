@@ -1,3 +1,3 @@
 #!/usr/bin/bash
-output=./commands/$1
-cp commands/template.js $output
+output=./lib/commands/$1
+cp ./lib/commands/template.js $output
