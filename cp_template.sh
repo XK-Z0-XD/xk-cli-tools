@@ -1,2 +1,3 @@
 #!/usr/bin/bash
-cp commands/template.js commands/file-gen.js
+output=./commands/$1
+cp commands/template.js $output
