@@ -1,15 +1,23 @@
 {
   "name": "xk-cli-tools",
   "version": "1.0.0",
-  "description": "cli tools",
+  "description": "collection of cli tools",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "xk-cli-tools": "./index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/XK-Z0-XD/xk-cli-tools.git"
   },
+  "files": [
+    "commands/",
+    "index.js",
+    "README.md"
+  ],
   "keywords": [
     "cli",
     "tools"
@@ -19,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/XK-Z0-XD/xk-cli-tools/issues"
   },
-  "homepage": "https://github.com/XK-Z0-XD/xk-cli-tools#readme"
+  "homepage": "https://github.com/XK-Z0-XD/xk-cli-tools#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "conf": "^13.1.0",
+    "prompts": "^2.4.2"
+  }
 }
