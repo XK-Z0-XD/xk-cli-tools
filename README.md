@@ -15,15 +15,14 @@ The purpose of these cli tools is to make doing certain tasks easier
 
 ## REQUIREMENTS
 
--  [![Node.js](https://custom-icon-badges.demolab.com/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+- NodeJs & NPM (Node Package Manager) must be installed on your computer
+  -  [![Node.js](https://custom-icon-badges.demolab.com/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 
 ## Setting up package
 
 1. open up a terminal of your choice 
-2. In the prompt type `npm i -g xk-tools` and hit enter. (the package will automatically create a link link to )
-3. 
-
-package will be automatically linked to your cli
+2. In the prompt type `npm i -g xk-tools` and hit enter. (the package will automatically create a link to the cli tool in your)
+3. to test out the command
 
 
 ------
@@ -33,3 +32,4 @@ package will be automatically linked to your cli
 [node-url]: https://nodejs.org
 [npm]: https://img.shields.io/npm/v/xk-tools.svg
 [npm-url]: https://npmjs.com/package/xk-tools
+[release]: https://img.shields.io/github/release-date/XK-Z0-XD/xk-cli-tools?logo=git
