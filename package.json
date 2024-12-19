@@ -5,6 +5,7 @@
   "main": "cli/index.js",
   "type": "commonjs",
   "scripts": {
+    "test": "node ./test/index.js",
     "preinstall": "echo Installing xk-tools",
     "postuninstall": "npm link && echo \"Linked package.\nxk-tools is ready to go!\""
   },
@@ -19,7 +20,7 @@
     "url": "git+https://github.com/XK-Z0-XD/xk-cli-tools.git"
   },
   "files": [
-    "/",
+    "cli/",
     "index.js",
     "README.md"
   ],
@@ -37,8 +38,11 @@
     "async": "^3.2.6",
     "chalk": "^4.1.2",
     "commander": "^12.1.0",
-    "conf": "^13.1.0",
+    "conf": "^10.2.0",
     "enquirer": "^2.4.1",
     "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "winston": "^3.17.0"
   }
 }
