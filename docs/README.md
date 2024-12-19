@@ -1,12 +1,12 @@
 # XK-CLI-TOOLS
 
-
 <!--
 for required:
     - :heavy_check_mark: - yes
     - :x: - no
 -->
-## subcmd-name
+
+## cli-tool
 
 arguments:
 
