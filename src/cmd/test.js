@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 /**
- * git tools
+ * Template Command
  */
 "use strict";
+
 const { chalk, print, path, getName, log } = require("../util");
+const {prompt}= require("enquirer")
 const { Command } = require("commander");
+/**@type {import("commander").Command} */
 const program = new Command();
-const name = getName(__dirname);
+const name = getName(__filename);
 // FUNCTIONS HERE 
 
 
@@ -15,12 +18,9 @@ const name = getName(__dirname);
 program
   .name(name)
   .description("Template Command Description")
+  // .argument("<arg>","Argument")
   .option("--opt","Option")
   .action((...args) => {
     log(`${program.name} executed`);
   });
-program
-.command("save")
-.description("Save git project");
-
 module.exports = program;

@@ -20,11 +20,11 @@ process.on("unhandledRejection", (err) => {
 const { pkg } = require("./util");
 // const {} = require("./util");
 const { Command } = require("commander");
-const test_cmd = require("./test");
-const todo = require("./todo");
+const test_cmd = require("./cmd/test");
+const todo = require("./cmd/todo");
 const journal = require("./journal");
 const file_gen = require("./file-gen");
-const gitTools = require("./git-tools");
+const gitTools = require("./cmd/git-tools");
 const args = process.argv;
 const program = new Command();
 program.name(pkg.name).description(pkg.description).version(pkg.version);

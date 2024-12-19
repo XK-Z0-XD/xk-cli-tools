@@ -3,7 +3,7 @@
  * Command Name
  */
 "use strict";
-const { chalk, logger, getName, log } = require("../util");
+const { chalk, logger, getName, log } = require("../../util");
 const config = new (require("conf"))();
 const name = getName(__filename);
 const cmd = getName(__dirname);
