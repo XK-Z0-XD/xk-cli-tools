@@ -1,0 +1,6 @@
+node_modules/
+template/
+docs/
+.vscode
+/.gitignore
+/.git*
