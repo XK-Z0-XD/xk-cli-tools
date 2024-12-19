@@ -3,3 +3,4 @@
 copy_file.sh
 ignore/
 **/*.log
+**/logs
