@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * Template Command
+ * Command Name
  */
 "use strict";
 
-const { chalk, print, path, cmdName, log } = require("../util");
+const { chalk, print, path, getName, log } = require("./util");
 const { Command } = require("commander");
 /**@type {import("commander").Command} */
 const program = new Command();
-const name = cmdName(__filename);
+const name = getName(__filename);
 // FUNCTIONS HERE 
 
 

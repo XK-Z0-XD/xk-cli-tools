@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 /**
- * Template Command
+ * Command Name
  */
 "use strict";
 
-const { chalk, print, path, cmdName, log } = require("../util");
+const { chalk, print, path, getName, log } = require("../util");
 const { Command } = require("commander");
 /**@type {import("commander").Command} */
 const program = new Command();
-const name = cmdName(__filename);
+// command configurations
+const name = getName(__dirname);
+const desc = "Generate Files"
 // FUNCTIONS HERE 
 
 
@@ -16,7 +18,7 @@ const name = cmdName(__filename);
 /** command  */
 program
   .name(name)
-  .description("Template Command Description")
+  .description(desc)
   .argument("<arg>","Argument")
   .option("--opt","Option")
   .action((...args) => {

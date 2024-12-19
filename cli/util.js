@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/**  */
 "use strict";
 
 //imports
@@ -8,7 +9,8 @@ const fs = require("fs");
 const path = require("path");
 const pkg = require("../package.json");
 const prompts = require("prompts");
-const conf = require("conf");
+const enquirer = require("enquirer");
+const conf = import("conf");
 const log = console.log,
   error = console.error;
 
@@ -29,29 +31,31 @@ const print = (color, ...msg) => {
 };
 
 /**
- * gets command name from file
- * @param {string} file
+ * gets command name from file/dir
+ * @param {string} fp
  * @returns {string}
  */
-const cmdName = (file) => {
-  return file.substring(file.lastIndexOf(path.sep) + 1, file.indexOf(".js"));
+const getName = (fp) => {
+  if (fs.statSync(fp).isDirectory()) {
+    return fp.substring(fp.lastIndexOf(path.sep) + 1, fp.length);
+  } else return fp.substring(fp.lastIndexOf(path.sep) + 1, fp.indexOf(".js"));
 };
 /**
- * 
- * @returns {cmd[]} 
+ *
+ * @returns {cmd[]}
  */
 const getCommands = () => {
-const dir = path.join(__dirname,"commands")
+  const dir = path.join(__dirname, "commands");
   let files = fs.readdirSync(dir);
   const nonCmds = ["main", "template", "util", "index"];
-  let cmds = []
+  let cmds = [];
   let total = 0;
   files.forEach((file) => {
-    if (/\.js$/gm.test(file)==true) {
+    if (/\.js$/gm.test(file) == true) {
       let name = file.substring(0, file.indexOf(".js"));
       if (!nonCmds.includes(name)) {
         const fp = path.join(dir, file);
-        /**@type {import("./util").cmd} */
+        /**@type {import("xk-cli-tools/cli/util").cmd} */
         const _cmd = require(fp);
         if (_cmd.enabled == true) {
           cmds.push[_cmd];
@@ -61,6 +65,10 @@ const dir = path.join(__dirname,"commands")
   });
   return cmds;
 };
+const cmdFunctions = (folder) => {
+
+};
+const getVersion = () => pkg.version;
 /**
  * cli version
  */
@@ -73,9 +81,10 @@ module.exports = {
   fs,
   log,
   error,
-  cmdName,
-  _version,
+  getName,
   getCommands,
   prompts,
-  conf
+  conf,
+  enquirer,
+  version: pkg.version,
 };
