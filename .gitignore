@@ -1,1 +1,3 @@
 /node_modules
+/template
+copy_file.sh
