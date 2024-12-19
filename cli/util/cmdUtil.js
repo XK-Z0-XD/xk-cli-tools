@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
-const pkg = require("../package.json");
+const pkg = require("../../package.json");
 /**
  * gets command name from file/dir
  * @param {string} fp

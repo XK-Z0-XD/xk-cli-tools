@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 /**
- * Template Command
+ * Command Name
  */
 "use strict";
 
-const { chalk, print, path, getName, log } = require("./util");
-const {prompt}= require("enquirer")
+const {  getName, log } = require("../util");
 const { Command } = require("commander");
-/**@type {import("commander").Command} */
+//command object
 const program = new Command();
+// command configurations
 const name = getName(__filename);
+const desc = "Print Information"
 // FUNCTIONS HERE 
 
 
@@ -17,9 +18,9 @@ const name = getName(__filename);
 /** command  */
 program
   .name(name)
-  .description("Template Command Description")
-  // .argument("<arg>","Argument")
-  .option("--opt","Option")
+  .description(desc)
+  .option("--os","Print Operating System info")
+  .option("--env","Print Environment Variables")
   .action((...args) => {
     log(`${program.name} executed`);
   });
