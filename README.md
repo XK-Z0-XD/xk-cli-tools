@@ -1,6 +1,6 @@
 # xk-tools
 
-![license](https://custom-icon-badges.demolab.com/github/license/XK-Z0-XD/xk-toolbox?logo=law&label=LICENSES)
+![license](https://custom-icon-badges.demolab.com/github/license/XK-Z0-XD/xk-cli-tools?logo=law&label=LICENSES)
 [![node][node]][node-url]
 
 ## what is cli?
