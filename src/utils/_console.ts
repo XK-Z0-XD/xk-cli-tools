@@ -15,7 +15,7 @@ const print = ({ color }: loggerOptions, ...msg: any[]) => {
     // else console.log(...msg);
   } else console.log(...msg);
 };
-function errorColor(str: string) {
+function errorColor(str:any) {
   return `\x1b[38;5;9m${str}\x1b[0m`;
 }
 export { error, errorColor, log, print };

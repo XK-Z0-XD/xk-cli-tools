@@ -3,7 +3,6 @@ const chalk = require("chalk");
 const fs = require("fs");
 
 const path = require("path");
-const logger = require("./_logger");
 let loggerObj = new logger();
 const logDir = path.join(__dirname, "logs");
 const handleExit = () => {
