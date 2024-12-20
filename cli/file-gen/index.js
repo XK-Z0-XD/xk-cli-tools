@@ -6,7 +6,7 @@
 
 const { chalk, print, path, getName, log } = require("../util");
 const { Command } = require("commander");
-const generate = require("./generate");
+const generate = require("./generate.js");
 const program = new Command();
 // command configurations
 const name = getName(__dirname);

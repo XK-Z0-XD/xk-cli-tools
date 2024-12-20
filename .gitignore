@@ -4,3 +4,6 @@ copy_file.sh
 ignore/
 **/*.log
 **/logs
+cli/**/*.d.ts
+**/dist
+lib/

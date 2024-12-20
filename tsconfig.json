@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    /* Projects */
+    "rootDir": "src",
+    "outDir": "lib",
+    "typeRoots": ["./node_modules/@types","./src/typings"],
+    "strict": true,
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",   
+    "allowJs": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "declarationDir": "lib/types",
+    "allowUmdGlobalAccess": true,
+    "isolatedModules": true,
+    
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  },
+
+  "include": ["src"],
+  // "exclude": [
+  //   "cli/*",
+  //   "test/*",
+  //   "template/",
+  //   "docs/",
+  //   "scripts/",
+  //   "ignore/"
+  // ]
+}

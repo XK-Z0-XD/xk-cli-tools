@@ -3,7 +3,7 @@
  * Template Command
  */
 "use strict";
-
+// const x = require("../lib/utils");
 const { chalk, print, path, getName, log } = require("./util");
 const {prompt}= require("enquirer")
 const { Command } = require("commander");

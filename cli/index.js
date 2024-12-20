@@ -17,7 +17,7 @@ process.on("unhandledRejection", (err) => {
   handleError(err);
 });
 // imports
-const { pkg } = require("../src/util");
+const { pkg } = require("./util");
 // const {} = require("./util");
 const { Command } = require("commander");
 const test_cmd = require("./test");
