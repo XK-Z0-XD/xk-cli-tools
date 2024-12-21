@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "todo",
+    "description": "",
+    "properties": {
+        "list": {
+            "type": "string",
+            "description": "active todo list",
+            "default": "readme.todo"
+        },
+        "task": {
+            "type": "object",
+            "properties": {
+                "desc": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "oneOf": [{"type":"string","enum": ["todo","xxx","fixme"]}],
+                    "default":"en"
+                },
+                "created": {
+                    "type":"number",
+                    "format": "date"                    
+                },
+                "status":{
+                   "type":"string",
+                }
+            }
+        },
+        
+        "tasks":{
+            "type":"array",
+            "items": {
+                              
+            }
+        }      
+    },
+    "$defs":{
+        
+    }
+}

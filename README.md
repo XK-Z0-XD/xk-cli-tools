@@ -1,8 +1,9 @@
 # xk-tools
 
-![license][license]
+![build][build] ![dependency][dependency-review] ![license][license]
 [![node][node]][node-url]
 ![javascript]
+
 ![downloads]()
 
 ## What is cli?
@@ -44,3 +45,6 @@ The purpose of these cli tools is to make doing certain tasks easier
 [node-url]: https://nodejs.org
 [license]: https://custom-icon-badges.demolab.com/github/license/XK-Z0-XD/xk-cli-tools?logo=law&label=LICENSE
 [javascript]: https://custom-icon-badges.demolab.com/static/v1?logo=javascript&label&message=javascript
+[install-size]: https://packagephobia.com/result?p=xk-tools
+[build]: https://github.com/XK-Z0-XD/xk-cli-tools/actions/workflows/build.yml/badge.svg
+[dependency-review]: https://github.com/XK-Z0-XD/xk-cli-tools/actions/workflows/dependency-review.yml/badge.svg

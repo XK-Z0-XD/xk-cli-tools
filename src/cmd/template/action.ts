@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-import { getName } from "../../utils";
+import { getName, log } from "../../utils";
 const name = getName(__filename);
-const action = (...args:any[]) =>{
-    
+const action = () =>{
+    log ("Template Command Action Executed.")
+    log()
 }
 module.exports = action;

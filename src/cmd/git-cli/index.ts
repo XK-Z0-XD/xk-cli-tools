@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { _name, chalk, Command, exec, getName, log } from "../../utils";
+import { _name, chalk, colors, Command, exec, getName, log } from "../../utils";
+import { helpConfig, outputConfig } from "../config";
 const name = getName(__dirname);
 const dir = getName(__dirname);
 const program = new Command();
@@ -11,30 +12,30 @@ const status = require("./status");
 const desc = "cli tools for git";
 //TODO: print info action
 const action = (options: { status?: any } | undefined) => {
-      if (options) {
-        log(options)
-      if (options.status) {
-        status();
-      }
+  if (options) {
+    log(options);
+    if (options.status) {
+      status();
     }
+  }
 };
 program
   .name(name)
   .description(chalk.cyan.bold(desc))
-  .usage(chalk.cyanBright.underline(`${_name} ${name} [options]`))
+  .usage(colors.usage(`${_name} ${name} [options]`))
   .option("-s,--status", "git status")
   .option("-b,--branch", "git branch")
   .option("--info", "print repo info")
-  .action(info);
+  .action(info)
+  .configureHelp(helpConfig)
+  .configureOutput(outputConfig);
 
 program
   .command(`save`)
   .description("save current git repository")
   .option(
     "-a",
-    chalk.cyan(
-      "add & commit all files (excluding files specified in .gitignore)"
-    )
+    "add & commit all files (excluding files specified in .gitignore)"
   )
   .action(save);
 

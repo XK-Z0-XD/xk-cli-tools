@@ -4,9 +4,27 @@ import { chalk } from "./_extra";
 
 const log = console.log;
 const error = console.error;
-
-
-type loggerOptions = { color: chalk.Chalk | string |undefined };
+const color = {
+  error: (str: any) => {
+    return `\x1b[38;5;9m${str}\x1b[0m`;
+  },
+   info:(str: any) => {
+    return `\x1B[38;5;14m${str}\x1b[0m`;
+  },
+  success:(str:any)=>{
+    return `\x1b[38;5;10m${str}\x1b[0m`;
+  }
+};
+const colors = {
+  cmdDesc: chalk.cyanBright,
+  optDesc: chalk.cyanBright.underline,
+  usage: chalk.bgYellow,
+  argDesc: chalk.magenta,
+  error: chalk.red,
+  info: chalk.cyan,
+  success: chalk.green
+}
+type loggerOptions = { color: chalk.Chalk | string | undefined };
 const print = ({ color }: loggerOptions, ...msg: any[]) => {
   if (color) {
     if (typeof color == "string") log(color, ...msg, "\x1b[0m");
@@ -15,8 +33,8 @@ const print = ({ color }: loggerOptions, ...msg: any[]) => {
     // else console.log(...msg);
   } else console.log(...msg);
 };
-function errorColor(str:any) {
+function errorColor(str: any) {
   return `\x1b[38;5;9m${str}\x1b[0m`;
 }
-export { error, errorColor, log, print };
+export { color, colors, error, errorColor, log, print };
 

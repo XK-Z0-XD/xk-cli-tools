@@ -7,3 +7,4 @@ ignore/
 cli/**/*.d.ts
 **/dist
 lib/
+/.vscode

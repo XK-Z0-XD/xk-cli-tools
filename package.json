@@ -7,16 +7,16 @@
   "scripts": {
     "test": "node ./test/index.js",
     "copy": "node ./scripts/copyFiles.js",
-    "build": "npm build:ts",
-    "build:ts": "npx tsc",
-    "build:install": "npx tsc && npm i -g",
+    "build": "npm run build:update",
+    "build:ts": "",
+    "build:update": "npx tsc && npm i -g",
     "build:compile": "scripts/build/main",
     "preinstall": "echo Installing xk-tools",
     "postuninstall": "npm link && echo \"Linked package.\nxk-tools is ready to go!\""
   },
   "bin": {
     "xk-tools": "bin/xk_tools.js",
-    "git-tools":"bin/xk_tools.js git-tools"
+    "git-tool":"bin/git-cli.js"
   },
   "repository": {
     "type": "git",

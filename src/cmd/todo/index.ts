@@ -1,18 +1,38 @@
 #!/usr/bin/env node
-import { chalk, Command, getName, log } from "../../utils";
+import { chalk, colors, Command, getName, log } from "../../utils";
 const name = getName(__dirname);
-const program = new Command(name);
+const program = new Command();
 const info = chalk.cyan;
 const desc = "todo manager tool";
+
+const list = require("./list");
+//command
 program
+  .name(name)
   .description(chalk.cyan.bold(desc))
   .option("--set-list", "Option")
   .action((...args: any[]) => {
     log(`${program.name} executed`);
   });
+
 program
-  .command("set-ist")
-  .argument("<file>", "todo list file ".concat(info.bold("must have .todo extension")))
-  .option("-c,--create","creates new todolist file")
-  .description(chalk.cyanBright.bold("sets file as active list"));
+.command("list")
+.description(colors.info("todo list"))
+// .usage(colors.usage.bold(""))
+.argument("<name>",colors.argDesc("list items from <name>"))
+.option("--set",colors.optDesc("set as active list"))
+.option("--get",colors.optDesc("get items"))
+.action(list);
+program
+  .command("add")
+  .description(colors.info("add task"))
+
+// program
+//   .command("")
+//   .argument(
+//     "<file>",
+//     "todo list file ".concat(info.bold("must have .todo extension"))
+//   )
+//   .option("-c,--create", colors.optDesc("creates new todolist file"))
+//   .description(colors.cmdDesc("sets file as active list"));
 module.exports = program;

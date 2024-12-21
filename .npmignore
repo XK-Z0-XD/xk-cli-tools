@@ -2,12 +2,14 @@ node_modules/
 template/
 ignore/
 docs/
-.vscode
+/.vscode
 /.gitignore
 /.git*
 test/
 /.github
 cli/
+**/logs
 **/*.log
 scripts/
 /*.sh
+/.vs/

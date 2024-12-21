@@ -1,5 +1,6 @@
 import { fs, path } from "./_extra";
 const pkg = require("../../package.json");
+
 /**
  * get command name
  * @param fp file path of command (file / directory)
