@@ -1,6 +1,8 @@
 # xk-tools
 
-![build][build] ![dependency][dependency-review] ![license][license]
+![build][build] ![dependency][dependency-review] 
+![contrib](https://custom-icon-badges.demolab.com/github/contributors/XK-Z0-XD/xk-cli-tools?logo=person) ![watches](https://custom-icon-badges.demolab.com/github/forks/XK-Z0-XD/xk-cli-tools?logo=repo-forked) ![Stars](https://custom-icon-badges.demolab.com/github/stars/XK-Z0-XD/xk-cli-tools?logo=stars&label=stars)
+![license][license] 
 [![node][node]][node-url]
 ![javascript]
 
@@ -48,3 +50,4 @@ The purpose of these cli tools is to make doing certain tasks easier
 [install-size]: https://packagephobia.com/result?p=xk-tools
 [build]: https://github.com/XK-Z0-XD/xk-cli-tools/actions/workflows/build.yml/badge.svg
 [dependency-review]: https://github.com/XK-Z0-XD/xk-cli-tools/actions/workflows/dependency-review.yml/badge.svg
+[contrib]: https://custom-icon-badges.demolab.com/github/contributors/XK-Z0-XD/xk-cli-tools?style=flat-square&logo=person 

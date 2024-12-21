@@ -35,5 +35,12 @@ const print = ({ color }: loggerOptions, ...msg: any[]) => {
 function errorColor(str: any) {
   return `\x1b[38;5;9m${str}\x1b[0m`;
 }
-export { color, colors, error, errorColor, log, print };
+const outputStdio = (err?: any, stdout?: string, stderr?: string) => {
+  if (err) {
+    log(colors.error(err.stdout));
+  }
+  log(stdout);
+  log(colors.error(stderr));
+};
+export { color, colors, error, errorColor, log, outputStdio };
 
