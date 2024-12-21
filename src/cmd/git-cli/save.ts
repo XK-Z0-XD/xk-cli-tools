@@ -1,28 +1,38 @@
 #!/usr/bin/env node
 import { Option } from "commander";
 import { prompt } from "enquirer";
-import { chalk, getName, print } from "../../utils";
+import { colors, getName, log } from "../../utils";
 const name = getName(__filename);
 const action = (options: Option) => {
-  print({ color: chalk.cyanBright }, "Press Ctrl+C to cancel anytime");
-
+  // print({ color: chalk.cyanBright }, "Press Ctrl+C to cancel anytime");
+  log(colors.info("initiating git add..."));
+  log(colors.info("Press Ctrl+C to cancel anytime"));
   const git_cmd = {
     add: { type: "input", name: "add", message: "add files: " },
     commit: { type: "input", name: "commit", message: "commit message: " },
   };
-  const doAction = async () => {
-    const response = await prompt([
-      { type: "input", name: "git_add", message: "git add " },
-      { type: "input", name: "commit", message: "commit message: " },
-    ]);
-  };
-  prompt(git_cmd.add)
-    .then((directory) => {
-      // execSync(`git add ${directory}`);
-      prompt(git_cmd.commit).then((result) => {
+  const questions = [{ type: "input", name: "git_add", message: "git add " }];
+  // const doAction = async () => {
+  //   const response = await prompt([
+  //     { type: "input", name: "items", message: "files to add: " },
+  //     { type: "input", name: "commit", message: "commit message: " },
+  //   ]);
+  // };
+   prompt([
+     { type: "input", name: "items", message: "list all files to add" },
+     { type: "input", name: "msg", message: "commit message: " },
+   ]).then(({items,msg}:any)=>{
+      log(colors.info(`adding ${items}...`));
+      log(colors.info(`commiting ${msg}...`));
+
+   })
+  // prompt(git_cmd.add)
+  //   .then((directory) => {
+  //     // execSync(`git add ${directory}`);
+  //     prompt(git_cmd.commit).then((result) => {
         
-      });
-    })
-    .catch(console.error);
+  //     });
+  //   })
+  //   .catch(console.error);
 };
 module.exports = action;

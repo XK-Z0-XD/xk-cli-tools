@@ -16,13 +16,13 @@ program
   });
 
 program
-.command("list")
-.description(colors.info("todo list"))
-// .usage(colors.usage.bold(""))
-.argument("<name>",colors.argDesc("list items from <name>"))
-.option("--set",colors.optDesc("set as active list"))
-.option("--get",colors.optDesc("get items"))
-.action(list);
+  .command("list")
+  .description(colors.info("todo list"))
+  // .usage(colors.usage.bold(""))
+  .argument("<name>", "list items from <name>")
+  .option("--set", "set as active list")
+  .option("--get", "get items")
+  .action(list);
 program
   .command("add")
   .description(colors.info("add task"))

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import { Command, chalk, colors } from "../utils";
-import { helpConfig } from "./config";
+import { helpConfig, outputConfig } from "./config";
 const pkg = require("../../package.json");
 const program = new Command(pkg.name);
-
-const git = require("./git-tool");
+const example  = require("./example");
+const git = require("./git-cli");
 const todo = require("./todo");
 const fg = require("./file-gen");
 //get all
@@ -20,6 +20,8 @@ program
 program
   .addCommand(git)
   .addCommand(todo)
-  .configureHelp(helpConfig);
+  .addCommand(example)
+  .configureHelp(helpConfig)
+  .configureOutput(outputConfig);
   // .helpInformation()
 module.exports = program;

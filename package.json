@@ -7,16 +7,15 @@
   "scripts": {
     "test": "node ./test/index.js",
     "copy": "node ./scripts/copyFiles.js",
-    "build": "npm run build:update",
-    "build:ts": "",
-    "build:update": "npx tsc && npm i -g",
-    "build:compile": "scripts/build/main",
+    "clean": "rm -rf ./lib",
+    "build": "npx tsc",
+    "build:clean": "npm run clean && npx tsc",
     "preinstall": "echo Installing xk-tools",
     "postuninstall": "npm link && echo \"Linked package.\nxk-tools is ready to go!\""
   },
   "bin": {
     "xk-tools": "bin/xk_tools.js",
-    "git-tool":"bin/git-cli.js"
+    "git-cli":"bin/git-cli.js"
   },
   "repository": {
     "type": "git",
@@ -46,11 +45,11 @@
     "commander": "^12.1.0",
     "conf": "^10.2.0",
     "enquirer": "^2.4.1",
-    "prompts": "^2.4.2"
+    "prompts": "^2.4.2",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "typescript": "^5.7.2",
-    "winston": "^3.17.0"
+    "typescript": "^5.7.2"
   }
 }

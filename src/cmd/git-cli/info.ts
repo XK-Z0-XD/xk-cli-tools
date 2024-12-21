@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import { color, colors, exec, fs, getName, log } from "../../utils";
-const name = getName(__filename);
+import { color, log } from "../../utils";
 
 const git_cmds = [`git status`, "git config"];
 const action = (options?: { status?: any; info?: any }) => {
@@ -12,18 +11,17 @@ const action = (options?: { status?: any; info?: any }) => {
     log(stdout);
     log(color.error(stderr));
   };
-
-  if (fs.readFileSync(process.cwd()).includes(".git")) {
-    if (options) {
-      log(options);
-      if (options.status) {
-        exec("git status", out);
-      } else if (options.info) {
-      }
-    } else {
-    }
-  }else {
-    log(colors.error("This directory is not a git repository"))
-  }
+  // if (options) {
+  //   if (fs.readdirSync(process.cwd()).includes(".git")) {
+  //     log(options);
+  //     if (options.status) {
+  //       exec("git status", out);
+  //     } else if (options.info) {
+  //     }
+  //   } else {
+  //     log(colors.error("This directory is not a git repository"));
+  //   }
+  // } else {
+  // }
 };
 module.exports = action;

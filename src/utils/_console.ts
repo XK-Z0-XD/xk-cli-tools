@@ -16,13 +16,12 @@ const color = {
   }
 };
 const colors = {
-  cmdDesc: chalk.cyanBright,
-  optDesc: chalk.cyanBright.underline,
-  usage: chalk.bgYellow,
+  warning: chalk.bgYellow,
   argDesc: chalk.magenta,
   error: chalk.red,
   info: chalk.cyan,
   success: chalk.green
+
 }
 type loggerOptions = { color: chalk.Chalk | string | undefined };
 const print = ({ color }: loggerOptions, ...msg: any[]) => {
