@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { chalk, colors, Command, getName, log } from "../../utils";
+import { helpConfig, outputConfig } from "../config";
 const name = getName(__dirname);
 const program = new Command();
 const info = chalk.cyan;
@@ -9,11 +10,13 @@ const list = require("./list");
 //command
 program
   .name(name)
-  .description(chalk.cyan.bold(desc))
+  .description(desc)
   .option("--set-list", "Option")
   .action((...args: any[]) => {
     log(`${program.name} executed`);
-  });
+  })
+  .configureHelp(helpConfig)
+  .configureOutput(outputConfig);
 
 program
   .command("list")

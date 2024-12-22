@@ -1,12 +1,19 @@
 #!/usr/bin/env node
 //@ts-nocheck
 const { Select } = require("enquirer");
-import { Option } from "commander";
+import { Command, Option } from "commander";
 import { log } from "../../../utils";
-let opt:Option = null;
-const view = ["view log", "view status", "view config"];
-const action = (options) => {
-  if (options) log(options);
+const view = require("./view-info");
+const save = require("./save");
+let opt: Option = null;
+const action = (options, program: Command) => {
+  if (options) {
+    log(options);
+    if (options.info){
+      view();
+    }else if (options.save){
+
+    }
+  } else program.help();
 };
-// function processAction()
 module.exports = action;

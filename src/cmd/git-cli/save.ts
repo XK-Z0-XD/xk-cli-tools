@@ -4,7 +4,6 @@ import { prompt } from "enquirer";
 import { colors, getName, log } from "../../utils";
 const name = getName(__filename);
 const action = (options: Option) => {
-  // print({ color: chalk.cyanBright }, "Press Ctrl+C to cancel anytime");
   log(colors.info("initiating git add..."));
   log(colors.info("Press Ctrl+C to cancel anytime"));
   const git_cmd = {
@@ -12,12 +11,6 @@ const action = (options: Option) => {
     commit: { type: "input", name: "commit", message: "commit message: " },
   };
   const questions = [{ type: "input", name: "git_add", message: "git add " }];
-  // const doAction = async () => {
-  //   const response = await prompt([
-  //     { type: "input", name: "items", message: "files to add: " },
-  //     { type: "input", name: "commit", message: "commit message: " },
-  //   ]);
-  // };
    prompt([
      { type: "input", name: "items", message: "list all files to add" },
      { type: "input", name: "msg", message: "commit message: " },

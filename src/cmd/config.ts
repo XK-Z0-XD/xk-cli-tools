@@ -20,9 +20,6 @@ const helpConfig: cmdr.HelpConfiguration = {
   optionDescription: (opt: cmdr.Option) => {
     return chalk.yellowBright(opt.description);
   },
-
-  //   visibleGlobalOptions: (cmd:cmdr.Command)=>{
-  //   }
 };
 const outputConfig: cmdr.OutputConfiguration = {
   outputError(str, write) {

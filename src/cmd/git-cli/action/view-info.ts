@@ -6,7 +6,9 @@ import { colors, log } from "../../../utils";
 const { Select } = require("enquirer");
 type git_action = "log" | "status" | "branch" | "remote";
 const view = {
-  status: () => {},
+  status: () => {
+    
+  },
   log: () => {},
   branch: () => {},
   remote: () => {},
