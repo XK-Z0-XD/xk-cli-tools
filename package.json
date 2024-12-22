@@ -14,14 +14,13 @@
     "postuninstall": "npm link && echo \"Linked package.\nxk-tools is ready to go!\""
   },
   "bin": {
-    "xk-tools": "bin/xk_tools.js",
-    "git-cli":"bin/git-cli.js"
+    "xkc": "bin/xk_tools.js",
+    "git-cli": "bin/git-cli.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/XK-Z0-XD/xk-cli-tools.git"
   },
- 
   "files": [
     "bin/xk-toolbox.js",
     "lib/",
@@ -45,6 +44,7 @@
     "commander": "^12.1.0",
     "conf": "^10.2.0",
     "enquirer": "^2.4.1",
+    "json-schema-typed": "^8.0.1",
     "prompts": "^2.4.2",
     "winston": "^3.17.0"
   },
