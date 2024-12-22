@@ -11,7 +11,7 @@ const logger = winston.createLogger({
         new winston.transports.File({ filename: path.join(dir,'error.log'), level: 'error' }),
     ]
 })
-
+console.log(process.cwd());
 // var _test = new test();
 // _test.run("xk-tools", (err, output, stderr) => {
 //     if (err) _test.log("error",err);
