@@ -13,3 +13,4 @@ cli/
 scripts/
 /*.sh
 /.vs/
+run_build.sh

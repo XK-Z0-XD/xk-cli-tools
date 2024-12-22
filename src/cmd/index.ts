@@ -10,9 +10,10 @@ const fg = require("./file-gen");
 const info = require("./info");
 //get all
 program
-  .argument("<command>")
+
   .description(colors.info(pkg.description))
   .version(colors.info(pkg.version))
+  .argument("<command>")
   .configureOutput({
     outputError(str, write) {
       write(chalk.red.bold(str));
