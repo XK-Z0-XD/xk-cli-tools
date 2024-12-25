@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { Command, chalk, colors } from "../utils";
-import { helpConfig, outputConfig } from "./config";
+import { Command, colors } from "../utils";
+import { helpCmdConfig, helpConfig, outputConfig } from "./config";
 const pkg = require("../../package.json");
 const program = new Command("xkc");
 const example = require("./example");
@@ -13,28 +13,15 @@ program
 
   .description(colors.info(pkg.description))
   .version(colors.info(pkg.version))
-  .argument("<command>")
-  .configureOutput({
-    outputError(str, write) {
-      write(chalk.red.bold(str));
-    },
-  });
+  .configureHelp(helpConfig);
+
 //COMMANDS
 program
   .addCommand(git)
   .addCommand(todo)
   .addCommand(example)
   .addCommand(info)
-  .configureHelp({
-    ...helpConfig,
-    visibleCommands: (cmd) => {
-      let cmds: Command[] = [];
-      cmd.commands.forEach((value, index: Number) => {
-        value.configureHelp(helpConfig).configureOutput(outputConfig);
-      });
-      return cmds;
-    },
-  })
+  .configureHelp(helpCmdConfig)
   .configureOutput(outputConfig);
 // .helpInformation()
 module.exports = program;

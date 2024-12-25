@@ -1,6 +1,7 @@
 import * as cmdr from "commander";
-import { chalk, Command } from "../utils";
-const purple = chalk.hex("#800080"), pink= chalk.hex("#FFX0CB");
+import { chalk, Command, log } from "../utils";
+const purple = chalk.hex("#800080"),
+  pink = chalk.hex("#FFX0CB");
 const helpConfig: cmdr.HelpConfiguration = {
   commandDescription: (cmd: cmdr.Command) => {
     return chalk.cyanBright.bold(cmd.description());
@@ -9,7 +10,9 @@ const helpConfig: cmdr.HelpConfiguration = {
     return chalk.magenta();
   },
   argumentTerm: (arg: cmdr.Argument) => {
-    return arg.required==true ? pink(arg.name()): chalk.blueBright(arg.name());
+    return arg.required == true
+      ? pink(arg.name())
+      : chalk.blueBright(arg.name());
   },
   argumentDescription: (arg: cmdr.Argument) => {
     return chalk.cyan(arg.description);
@@ -23,22 +26,25 @@ const helpConfig: cmdr.HelpConfiguration = {
 };
 const outputConfig: cmdr.OutputConfiguration = {
   outputError(str, write) {
-    write(chalk.red.bold(str));
+    const title = chalk.bgRedBright(chalk.black("\tERROR\t")).concat("\n");
+    write(title + chalk.red.bold(str));
+  },
+  writeOut: (str: string) => {
+    log(str);
   },
 };
 const helpCmdConfig: cmdr.HelpConfiguration = {
   ...helpConfig,
-    
-  visibleCommands:(cmd)=>{
-    
+  visibleCommands: (cmd) => {
     let cmds: Command[] = [];
-    cmd.commands.forEach((value,index:Number)=>{
-        value.configureHelp(helpConfig)
+    cmd.commands.forEach((value, index: Number) => {
+      let command = value
+        .configureHelp(helpConfig)
         .configureOutput(outputConfig);
-    })
+      cmds.push(command);
+    });
     return cmds;
-  }
+  },
 };
-
-export { helpConfig, outputConfig };
+export { helpCmdConfig, helpConfig, outputConfig };
 

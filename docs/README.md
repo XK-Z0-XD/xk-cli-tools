@@ -1,26 +1,7 @@
-<div align="center">
+# :book: Documentation
 
-</div>
+## Table of Contents
 
-# XK-CLI-TOOLS
-
-<!--
-for required:
-    - :heavy_check_mark: - yes
-    - :x: - no
--->
-
-## cli-tool
-
-arguments:
-
-- argument
-  - type: string
-  - description:
-  - required :heavy_check_mark:
-  
-options:
-
-- option:
-  - flag `-f,--flag`
-  - description:
+- [Development :notebook:](./_dev.md)
+- [Commands](./commands/README.md)
+- 

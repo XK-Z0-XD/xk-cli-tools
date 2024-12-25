@@ -1,6 +1,6 @@
 #!/usr/bin/env node
+import * as os from "os";
 import { chalk, log } from "../../utils";
- const os = require("os");
 const action = () =>{
      const osInfo = {
       Machine: os.machine(),
@@ -9,6 +9,7 @@ const action = () =>{
       Arch: os.arch(),
       "OS Type": os.type(),
       "OS Version": os.version(),
+      host: os.hostname(),
     };
     let keys = Object.keys(osInfo);
     keys.forEach((o: string) => {

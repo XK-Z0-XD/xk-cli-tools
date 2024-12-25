@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { colors, Command, getName } from "../../utils";
+import { colors, Command, getName, log } from "../../utils";
 import { helpConfig, outputConfig } from "../config";
 const name = getName(__dirname);
 const git_info = require("./git-info");
@@ -12,7 +12,7 @@ program
   .description(desc)
   .argument(
     "[name]",
-    "name of file to examine to examine".concat(
+    "name of file to examine".concat(
       colors.warning(
         "if [name] isn't specified, current working directory will be used"
       )
@@ -25,7 +25,8 @@ program
     "--file",
     `file info`.concat(colors.warning("(does not include content)"))
   )
-  .action((name, options) => {
+  .action((name?, options?) => {
+    log(colors.info("name: "), name,colors.info("\noptions: "), options);
     if (options) {
       if (options.os) os_info();
       else if (options.git) git_info();

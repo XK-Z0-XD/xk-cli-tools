@@ -13,6 +13,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",   
     "allowJs": true,
+    "removeComments": false,
     // "declaration": true,
     // "declarationDir": "lib/types",
     "isolatedModules": true,
